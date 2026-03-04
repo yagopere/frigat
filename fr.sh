@@ -174,13 +174,14 @@ wget -q -O /models/cpu_model.tflite https://github.com/google-coral/test_data/ra
 cp /opt/frigate/labelmap.txt /labelmap.txt
 msg_ok "Downloaded Inference Models"
 
-msg_info "Downloading Audio Model"
-wget -q -O /tmp/yamnet.tar.gz https://www.kaggle.com/api/v1/models/google/yamnet/tfLite/classification-tflite/1/download
-$STD tar xzf /tmp/yamnet.tar.gz -C /
-mv /1.tflite /cpu_audio_model.tflite
-cp /opt/frigate/audio-labelmap.txt /audio-labelmap.txt
-rm -f /tmp/yamnet.tar.gz
-msg_ok "Downloaded Audio Model"
+#msg_info "Downloading Audio Model"
+#pct push <ID> /mnt/yamnet-tflite-classification-tflite-v1.tar.gz /tmp/yamnet.tar.gz
+#wget -q -O /tmp/yamnet.tar.gz https://www.kaggle.com/api/v1/models/google/yamnet/tfLite/classification-tflite/1/download
+#$STD tar xzf /tmp/yamnet.tar.gz -C /
+#mv /1.tflite /cpu_audio_model.tflite
+#cp /opt/frigate/audio-labelmap.txt /audio-labelmap.txt
+#rm -f /tmp/yamnet.tar.gz
+#msg_ok "Downloaded Audio Model"
 
 msg_info "Installing HailoRT Runtime"
 $STD bash /opt/frigate/docker/main/install_hailort.sh
